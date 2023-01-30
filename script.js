@@ -1,27 +1,27 @@
-let toggleBtn = document.querySelector(".toggle")
-let body = document.querySelector("body")
-let buttons = document.querySelector(".buttons")
-let btn = document.querySelectorAll("span")
-let valueEl = document.getElementById("value-el")
+let toggleBtn = document.querySelector('.toggle')
+let body = document.querySelector('body')
+
+let buttons = document.querySelector('.buttons')
+let btn = document.querySelectorAll('span')
+let valueEl = document.getElementById('value-el')
 
 for(let i = 0; i < btn.length; i++)
 {
     btn[i].addEventListener("click", function()
     {
-        if(this.innerHTML == "=")
+        if(this.textContent == "=")
         {
-            valueEl.innerHTML = eval(valueEl.innerHTML);
+            valueEl.textContent = eval(valueEl.textContent);
         }
-            
         else
         {
-            if(this.innerHTML == "clear")
+            if(this.textContent == "clear")
             {
-                valueEl.innerHTML = null;
+                valueEl.textContent = "";
             }
             else
             {
-                valueEl.innerHTML += this.innerHTML;
+                valueEl.textContent += this.textContent;
             }
         }
     })
